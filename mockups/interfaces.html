@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiết kế giao diện - EMart9</title>
+<style>
+  body{font-family:Arial,"Segoe UI",sans-serif;background:#d9d9d9;margin:0;padding:24px;color:#111}
+  h2.sr{position:absolute;left:-9999px}
+  .win{width:760px;margin:0 auto 40px;border:1px solid #6b6b6b;box-shadow:2px 2px 6px rgba(0,0,0,.25);background:#f0f0f0}
+  .tbar{background:#1f3c88;color:#fff;font-weight:bold;font-size:13px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center}
+  .tbar .btns span{display:inline-block;width:14px;height:14px;border:1px solid #cfd6ee;margin-left:4px;text-align:center;line-height:12px;font-size:10px}
+  .body{padding:18px 20px;background:#f0f0f0}
+  .title{color:#1f3c88;font-size:18px;font-weight:bold;text-align:center;margin:6px 0 18px}
+  .row{margin:8px 0;display:flex;align-items:center;gap:10px}
+  .row label{min-width:130px;font-size:13px}
+  .inp{border:1px solid #808080;background:#fff;padding:5px 8px;font-size:13px;min-width:200px}
+  .val{font-weight:bold;color:#1f3c88;font-size:13px}
+  select.inp{min-width:140px}
+  .btns-row{text-align:center;margin-top:16px}
+  button{font-family:inherit;font-size:13px;background:#e1e1e1;border:1px solid #808080;padding:7px 16px;margin:4px 6px;cursor:default}
+  button.primary{background:#1f3c88;color:#fff;border-color:#16306e;font-weight:bold}
+  table{border-collapse:collapse;width:100%;background:#fff;font-size:12.5px;margin:6px 0}
+  th,td{border:1px solid #9a9a9a;padding:6px 8px;text-align:left}
+  th{background:#e7e7e7;font-weight:bold;text-align:center}
+  tr.sel{background:#cfe0ff}
+  td.c{text-align:center}
+  .big-btn{display:block;width:280px;margin:14px auto;padding:16px;font-size:15px;font-weight:bold;background:#d7d7d7;border:1px solid #808080}
+  .big-btn.b{color:#1f3c88}
+  .sub{font-size:12px;color:#555;text-align:center;margin-top:4px}
+  .formname{max-width:760px;margin:0 auto 6px;font-size:12px;color:#444;font-weight:bold}
+</style>
+</head>
+<body>
+<h2 class="sr">Thiết kế 8 giao diện hệ thống QLST điện máy (đề 9)</h2>
+
+<!-- 1. MainFrm9 -->
+<div class="formname">Hình 3.x. Giao diện MainFrm9 (Đăng nhập)</div>
+<div class="win">
+  <div class="tbar"><span>MainFrm9 - Đăng nhập</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="title">HỆ THỐNG QUẢN LÝ SIÊU THỊ ĐIỆN MÁY</div>
+    <div class="row" style="justify-content:center"><label style="min-width:110px">Tên đăng nhập:</label><input class="inp" value="kho01"></div>
+    <div class="row" style="justify-content:center"><label style="min-width:110px">Mật khẩu:</label><input class="inp" type="password" value="123"></div>
+    <div class="btns-row"><button class="primary">Đăng nhập</button><button>Thoát</button></div>
+  </div>
+</div>
+
+<!-- 2. CustomerMainFrm9 -->
+<div class="formname">Hình 3.x. Giao diện CustomerMainFrm9 (Trang chủ khách hàng)</div>
+<div class="win">
+  <div class="tbar"><span>CustomerMainFrm9 - Trang chủ khách hàng</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="title">XIN CHÀO NGUYỄN VĂN AN</div>
+    <div class="big-btn b">Tìm kiếm mặt hàng</div>
+    <div class="big-btn">Đăng xuất</div>
+  </div>
+</div>
+
+<!-- 3. SearchProductFrm9 -->
+<div class="formname">Hình 3.x. Giao diện SearchProductFrm9 (Tìm kiếm mặt hàng)</div>
+<div class="win">
+  <div class="tbar"><span>SearchProductFrm9 - Tìm kiếm mặt hàng</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="row"><label>Từ khóa:</label><input class="inp" value="Tivi"><label style="min-width:70px">Danh mục:</label>
+      <select class="inp"><option>Tất cả</option><option selected>Tivi</option><option>Tủ lạnh</option><option>Máy giặt</option></select>
+      <button class="primary">Tìm kiếm</button><button>Làm mới</button></div>
+    <div class="sub" style="text-align:left;margin:8px 0 2px">Bảng kết quả tra cứu mặt hàng (tblResult):</div>
+    <table>
+      <tr><th>Mã</th><th>Tên mặt hàng</th><th>Danh mục</th><th>Hãng</th><th>Đơn giá</th><th>Trạng thái</th></tr>
+      <tr class="sel"><td class="c">1</td><td>Tivi Samsung 55 inch 4K</td><td>Tivi</td><td>Samsung</td><td class="c">12.500.000 đ</td><td class="c">Còn hàng</td></tr>
+      <tr><td class="c">6</td><td>Tivi Sony Bravia 43 inch</td><td>Tivi</td><td>Sony</td><td class="c">9.900.000 đ</td><td class="c">Hết hàng</td></tr>
+    </table>
+    <div class="btns-row"><button>Xem chi tiết mặt hàng</button><button>Quay lại</button></div>
+  </div>
+</div>
+
+<!-- 4. ProductDetailFrm9 -->
+<div class="formname">Hình 3.x. Giao diện ProductDetailFrm9 (Chi tiết mặt hàng)</div>
+<div class="win">
+  <div class="tbar"><span>ProductDetailFrm9 - Chi tiết mặt hàng</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="title">CHI TIẾT MẶT HÀNG</div>
+    <div class="row"><label>Mã mặt hàng:</label><span class="val">1</span></div>
+    <div class="row"><label>Tên:</label><span class="val">Tivi Samsung 55 inch 4K</span></div>
+    <div class="row"><label>Danh mục:</label><span class="val">Tivi</span></div>
+    <div class="row"><label>Hãng sản xuất:</label><span class="val">Samsung</span></div>
+    <div class="row"><label>Đơn vị tính:</label><span class="val">Chiếc</span></div>
+    <div class="row"><label>Đơn giá:</label><span class="val">12.500.000 đ</span></div>
+    <div class="row"><label>Trạng thái:</label><span class="val">Còn hàng</span></div>
+    <div class="row"><label>Mô tả:</label><span class="val">Smart TV 55 inch độ phân giải 4K</span></div>
+    <div class="btns-row"><button>Quay lại</button></div>
+  </div>
+</div>
+
+<!-- 5. WarehouseMainFrm9 -->
+<div class="formname">Hình 3.x. Giao diện WarehouseMainFrm9 (Trang chủ nhân viên kho)</div>
+<div class="win">
+  <div class="tbar"><span>WarehouseMainFrm9 - Trang chủ nhân viên kho</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="title">QUẢN LÝ KHO - TRẦN THỊ KHO</div>
+    <div class="big-btn b">Duyệt đơn + xuất kho</div>
+    <div class="big-btn">Đăng xuất</div>
+  </div>
+</div>
+
+<!-- 6. PendingOrderFrm9 -->
+<div class="formname">Hình 3.x. Giao diện PendingOrderFrm9 (Duyệt đơn + xuất kho)</div>
+<div class="win">
+  <div class="tbar"><span>PendingOrderFrm9 - Duyệt đơn + xuất kho</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="sub" style="text-align:left;margin:2px 0">Danh sách đơn chưa xuất:</div>
+    <table>
+      <tr><th>Mã đơn</th><th>Ngày đặt</th><th>Khách hàng</th><th>Tổng tiền</th><th>NV giao hàng</th><th>Trạng thái</th></tr>
+      <tr class="sel"><td class="c">1</td><td>10/01/2026 09:30</td><td>Nguyễn Văn An</td><td class="c">22.300.000 đ</td><td class="c">Vũ Anh Tuấn</td><td class="c">Chưa xuất</td></tr>
+      <tr><td class="c">2</td><td>11/01/2026 14:00</td><td>Trần Thị Bình</td><td class="c">15.500.000 đ</td><td class="c">(chưa chọn)</td><td class="c">Chưa xuất</td></tr>
+    </table>
+    <div class="sub" style="text-align:left;margin:8px 0 2px">Chi tiết đơn đã chọn:</div>
+    <table>
+      <tr><th>Mặt hàng</th><th>Hãng</th><th>Số lượng</th><th>Đơn giá</th></tr>
+      <tr><td>Tivi Samsung 55 inch 4K</td><td>Samsung</td><td class="c">1</td><td class="c">12.500.000 đ</td></tr>
+      <tr><td>Tủ lạnh LG Inverter 300L</td><td>LG</td><td class="c">1</td><td class="c">9.800.000 đ</td></tr>
+    </table>
+    <div class="btns-row"><button class="primary">Chọn NV giao hàng</button><button>Cập nhật đã xuất</button><button>In hóa đơn</button><button>Quay lại</button></div>
+  </div>
+</div>
+
+<!-- 7. DeliveryStaffListFrm9 -->
+<div class="formname">Hình 3.x. Giao diện DeliveryStaffListFrm9 (Chọn nhân viên giao hàng)</div>
+<div class="win">
+  <div class="tbar"><span>DeliveryStaffListFrm9 - Chọn nhân viên giao hàng</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="title" style="font-size:15px">CHỌN NHÂN VIÊN GIAO HÀNG - Đơn #1</div>
+    <table>
+      <tr><th>Mã</th><th>Họ tên</th><th>Số điện thoại</th></tr>
+      <tr class="sel"><td class="c">1</td><td>Vũ Anh Tuấn</td><td>0901111222</td></tr>
+      <tr><td class="c">2</td><td>Đỗ Thu Hà</td><td>0902333444</td></tr>
+      <tr><td class="c">3</td><td>Ngô Văn Giao</td><td>0903555666</td></tr>
+    </table>
+    <div class="btns-row"><button class="primary">Chọn</button><button>Quay lại</button></div>
+  </div>
+</div>
+
+<!-- 8. InvoiceFrm9 -->
+<div class="formname">Hình 3.x. Giao diện InvoiceFrm9 (Hóa đơn)</div>
+<div class="win">
+  <div class="tbar"><span>InvoiceFrm9 - Hóa đơn xuất kho</span><span class="btns"><span>–</span><span>□</span><span>×</span></span></div>
+  <div class="body">
+    <div class="title">HÓA ĐƠN BÁN HÀNG</div>
+    <div class="row"><label>Mã hóa đơn:</label><span class="val">101</span><label style="min-width:90px">Mã đơn:</label><span class="val">1</span></div>
+    <div class="row"><label>Khách hàng:</label><span class="val">Nguyễn Văn An</span></div>
+    <div class="row"><label>NV giao hàng:</label><span class="val">Vũ Anh Tuấn</span></div>
+    <div class="row"><label>Ngày xuất:</label><span class="val">12/01/2026 11:00</span><label style="min-width:90px">Tổng tiền:</label><span class="val">22.300.000 đ</span></div>
+    <table>
+      <tr><th>Mặt hàng</th><th>Hãng</th><th>Số lượng</th><th>Đơn giá</th></tr>
+      <tr><td>Tivi Samsung 55 inch 4K</td><td>Samsung</td><td class="c">1</td><td class="c">12.500.000 đ</td></tr>
+      <tr><td>Tủ lạnh LG Inverter 300L</td><td>LG</td><td class="c">1</td><td class="c">9.800.000 đ</td></tr>
+    </table>
+    <div class="btns-row"><button class="primary">In</button><button>Quay lại</button></div>
+  </div>
+</div>
+
+</body>
+</html>
